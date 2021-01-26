@@ -211,7 +211,7 @@ $ripple-target: '.mdc-fab__ripple';
     math.max(list.nth($padding, 3), $width)
     math.max(list.nth($padding, 4), $width);
 
-  &:focus {
+  @include ripple-theme.focus() {
     @include feature-targeting.targets($feat-structure) {
       border-style: solid;
       border-width: $width;
@@ -233,7 +233,7 @@ $ripple-target: '.mdc-fab__ripple';
 @mixin focus-outline-color($color, $query: feature-targeting.all()) {
   $feat-color: feature-targeting.create-target($query, color);
 
-  &:focus {
+  @include ripple-theme.focus() {
     @include feature-targeting.targets($feat-color) {
       @include theme.property(border-color, $color);
     }
